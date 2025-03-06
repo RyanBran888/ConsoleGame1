@@ -49,7 +49,7 @@ public void runGame()
         picked[picked.Length - 1] = qNum;
         trues = false;
     }
-    if(picked.Length >= 30)
+    if(picked.Length >= 20)
     {
         endGame();
     }
