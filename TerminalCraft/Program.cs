@@ -26,6 +26,7 @@ static void Main()
 }
 public void runGame()
 {
+    trues = false;
     qNum = rnd.Next(1, 30);
     for(int i = 0; i < picked.Length; i++)
     {
