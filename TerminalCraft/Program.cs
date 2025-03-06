@@ -1,4 +1,4 @@
-﻿class Program
+class Program
 {
  public int rawr = 1;
 public int[] picked = new int[0];
@@ -8,6 +8,7 @@ Random rnd = new Random();
 public int qNum = 0;
 public string? cAns;
 public bool trues = false;
+public int longestStreak = 0;
 static void Main()
 {
     Program game = new Program();
@@ -26,6 +27,10 @@ static void Main()
 }
 public void runGame()
 {
+    if(longestStreak < streak)
+    {
+        longestStreak = streak;
+    }
     trues = false;
     qNum = rnd.Next(1, 30);
     for(int i = 0; i < picked.Length; i++)
@@ -44,9 +49,16 @@ public void runGame()
         picked[picked.Length - 1] = qNum;
         trues = false;
     }
+    if(picked.Length >= 30)
+    {
+        endGame();
+    }
     
 }
-
+public void endGame()
+{
+    Console.WriteLine("Thank you for doing the yugioh quiz! your final score was: " + score + " and your longest streak was " + longestStreak);
+}
 public string questionFinder(int num)
 {
     switch(num)
